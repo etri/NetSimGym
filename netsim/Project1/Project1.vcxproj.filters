@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Commandlist.c" />
+    <ClCompile Include="Container.c" />
+    <ClCompile Include="Reserve.c" />
+    <ClCompile Include="any.pb-c.c" />
+    <ClCompile Include="NetSimProto.pb-c.c" />
+    <ClCompile Include="protobuf-c.c" />
+    <ClCompile Include="GymPythonInteraction.c" />
+    <ClCompile Include="GymEx1.c" />
+    <ClCompile Include="GymEx2.c" />
+    <ClCompile Include="GymEx0.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="any.pb-c.h" />
+    <ClInclude Include="NetSimProto.pb-c.h" />
+    <ClInclude Include="protobuf-c.h" />
+    <ClInclude Include="Gym.h" />
+  </ItemGroup>
+</Project>
