@@ -1,0 +1,35 @@
+def CommandStrToNum(commandstring):
+    match commandstring:
+        case "RandomState":
+            return 1
+        case "IntState":
+            return 2
+        case "Dummy":
+            return 3
+        case "SINR_ex1":
+            return 4
+        case "Throughput_ex1":
+            return 5
+        case "Sum_ex1":
+            return 6
+        case "UE_ex2":
+            return 7
+        case "CellLoad_ex2":
+            return 8
+        case "EdgeUE_ex2":
+            return 9
+        case _:
+            return None 
+            
+def ActionCommandStrToNum(commandstring):
+    match commandstring:
+        case "RandomAction":
+            return 1
+        case "IntAction":
+            return 2
+        case "Power":
+            return 3
+        case "HOM":
+            return 4
+        case _:
+            return None 
