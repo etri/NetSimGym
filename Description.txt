@@ -1,16 +1,19 @@
-NetSim/ : Directory containing GymProcessor sourcecode and workspace
-├── Project1/ : Source files of GymProcessor in NetSimGym  
-└── NetSimGym_v4.netsimexp : NetSimGym workspace
-
-Python/ : Directory containing NetSimGym and agent files
-├── NetSimGym/ : Directory for NetSimGym
-│ ├── __init__.py : Register NetSimGym env
-│ ├── commandlist.py : Defined commands for state and action
-│ ├── netsimenv.py : NetSimGym env inheriting gym.env
-│ ├── NetSimProto.proto : Protobuf definition for NetSimGym
-│ └── NetSimProto_pb2.py : Python-compiled protobuf
-├── agent_basic.py : Basic data exchange example
-├── agent_ex1.py :  Downlink power control example
-├── agent_ex2.py : Load balancing example
+example/ : Directory containing NetSim commands, agents, workspace, and simulation running files
+├── GymEx0.c : NetSim commands for basic data echange example
+├── GymEx1.c : NetSim commands for downlink power control
+├── GymEx2.c : NetSim commands for load balancing example
+├── NetSimGym_v1-0.netsimexp : NetSimGym workspace
+├── agent_basic.py : Agent for basic data exchange example
+├── agent_ex1.py :  Agent for downlink power control example
+├── agent_ex2.py : Agent for load balancing example
 ├── NetSim_Scenario_ex1.py : File for running NetSim simulation (basic & ex1)
 └── NetSim_Scenario_ex2.py : File for running NetSim simulation (ex2)
+
+netsim/ : Directory containing GymProcessor sourcecode
+
+python/NetSimGym/ : Directory containing NetSimGym for python
+├── __init__.py : Register NetSimGym env
+├── commandlist.py : Defined commands for state and action
+├── netsimenv.py : NetSimGym env inheriting gym.env
+├── NetSimProto.proto : Protobuf definition for NetSimGym
+└── NetSimProto_pb2.py : Python-compiled protobuf
