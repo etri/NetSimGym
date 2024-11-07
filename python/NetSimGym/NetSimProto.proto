@@ -1,0 +1,49 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+enum IsInit {
+  IsInit_Act = 0;
+  IsInit_Init = 1;
+}
+
+//--Python_Inner_Msg--//
+
+message InitMsg {
+  float time_step = 1;
+  float total_time = 2;
+  repeated int32 command_name = 3;
+  repeated string device_name = 4;
+  int32 numofagent = 5;
+}
+
+message ActMsg {
+  int32 command_name = 1;
+  repeated float values = 2;
+  int32 doneinfo =3;
+
+}
+
+//--NetSim_Inner_Msg--//
+
+message ObsMsg {
+  bool is_reward =1;
+  string key_name = 2; 
+  repeated float values = 3;
+}
+
+//--Outer_Msg--//
+
+message PythonMsg {
+  IsInit is_init = 1;
+  repeated google.protobuf.Any details = 2;
+  bool stop_sim = 3;
+}
+
+message NetSimMsg{
+    int32 key_num = 1;
+    repeated google.protobuf.Any details = 2;
+    bool is_done = 3;
+    string more_info = 4;
+}
+
+
