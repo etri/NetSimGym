@@ -23,7 +23,7 @@ DictContainer* Container_init()
 		return NULL;
 	}
 
-	mapManager->maxSize = 100; // ÃÖ´ë Å©±â ¼³Á¤
+	mapManager->maxSize = 100; // ÃƒÃ–Â´Ã« Ã…Â©Â±Ã¢ Â¼Â³ÃÂ¤
 	mapManager->currentSize = 0;
 
 	mapManager->maps = (BoxContainer*)malloc(mapManager->maxSize * sizeof(BoxContainer));
