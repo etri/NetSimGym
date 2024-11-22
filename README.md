@@ -37,31 +37,31 @@ There are two methods for running NetSim simulation:
 
 ### Running simumation via NetSim GUI
 
-- Running NetSim simulation:
-  - In "Your Work," select either "NetSimGym_ex1_3x6" or "NetSimGym_ex2-2_ran3_30s"
-  - Click "Run Simulation" to start
-- You need to click "Run Simulation" for each episode.
-  - Open CMD and navigate to the directory containing the agent files
+Running NetSim simulation:
+- In "Your Work," select either "NetSimGym_ex1_3x6" or "NetSimGym_ex2-2_ran3_30s"
+- Click "Run Simulation" to start
+You need to click "Run Simulation" for each episode.
+Open CMD and navigate to the directory containing the agent files
   
     $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
-  
-  - Run the agent file with the same number as the currently running NetSim simulation example
+
+Run the agent file with the same number as the currently running NetSim simulation example
   
     $ python agent_ex1.py or python agent_ex2.py
 
 ### Running simulation via CMD with Python files
 
-- Running NetSim simulation:
-  - Edit "NetSim_Scenario_ex1.py" and 'NetSim_Scenario_ex2,py" file (set netsim path to the "bin_x64" directory of your workspace, IOPath to the experiment folder location, and license path to the license file name)
-  - ex)
-    - NETSIM_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0\\bin_x64"
-    - IO_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0"
-    - LICENSE_PATH = os.path.join(NETSIM_PATH, "netsim-cloud-license-etri-korea.lic")
-  - Navigate to the directory containing the NetSim_Scenario file
+Running NetSim simulation:
+- Edit "NetSim_Scenario_ex1.py" and 'NetSim_Scenario_ex2,py" file (set netsim path to the "bin_x64" directory of your workspace, IOPath to the experiment folder location, and license path to the license file name)
+- ex)
+  - NETSIM_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0\\bin_x64"
+  - IO_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0"
+  - LICENSE_PATH = os.path.join(NETSIM_PATH, "netsim-cloud-license-etri-korea.lic")
+Navigate to the directory containing the NetSim_Scenario file
 
     $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
     
-  - Run the NetSim Scenario file
+Run the NetSim Scenario file
 
     $ python NetSim_Scenario_ex1.py or python NetSim_Scenario_ex2.py
 
