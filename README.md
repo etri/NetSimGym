@@ -40,6 +40,7 @@ There are two methods for running NetSim simulation:
 Running NetSim simulation:
 - In "Your Work," select either "NetSimGym_ex1_3x6" or "NetSimGym_ex2-2_ran3_30s"
 - Click "Run Simulation" to start
+
 You need to click "Run Simulation" for each episode.
 Open CMD and navigate to the directory containing the agent files
   
@@ -57,6 +58,7 @@ Running NetSim simulation:
   - NETSIM_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0\\bin_x64"
   - IO_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0"
   - LICENSE_PATH = os.path.join(NETSIM_PATH, "netsim-cloud-license-etri-korea.lic")
+
 Navigate to the directory containing the NetSim_Scenario file
 
     $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
@@ -64,6 +66,10 @@ Navigate to the directory containing the NetSim_Scenario file
 Run the NetSim Scenario file
 
     $ python NetSim_Scenario_ex1.py or python NetSim_Scenario_ex2.py
+
+Run the agent file with the same number as the currently running NetSim simulation example
+  
+    $ python agent_ex1.py or python agent_ex2.py
 
     
 ## Acknowledgement
