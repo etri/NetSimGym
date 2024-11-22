@@ -42,8 +42,11 @@ There are two methods for running NetSim simulation:
   - Click "Run Simulation" to start
 - You need to click "Run Simulation" for each episode.
   - Open CMD and navigate to the directory containing the agent files
+  
     $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
+  
   - Run the agent file with the same number as the currently running NetSim simulation example
+  
     $ python agent_ex1.py or python agent_ex2.py
 
 ### Running simulation via CMD with Python files
