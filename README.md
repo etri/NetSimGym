@@ -58,10 +58,15 @@ There are two methods for running NetSim simulation:
     - IO_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0"
     - LICENSE_PATH = os.path.join(NETSIM_PATH, "netsim-cloud-license-etri-korea.lic")
   - Navigate to the directory containing the NetSim_Scenario file
+
+aa
     $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
+    
   - Run the NetSim Scenario file
+
     $ python NetSim_Scenario_ex1.py or python NetSim_Scenario_ex2.py
 
+    
 ## Acknowledgement
 
 This work was supported by Institute of Information & Communications Technology Planning & Evaluation (IITP) grant funded by the Korea government (MSIT) (RS-2024-00392332, Development of 6G Network Integrated Intelligence Plane Technologies, 50% & 2022-0-00862, Development of Intelligent 6G Mobile Core Network Technologies, 50%). 
