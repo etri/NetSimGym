@@ -61,10 +61,8 @@ There are two methods for running NetSim simulation:
 
 If you use Anaconda, you can install GymProxy by the followings:
 
-    $ conda activate my_env     # We assume that 'my_env' is your working environment 
-    $ conda develop ~/projects/gymproxy    
+    $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
 
-aa
     $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
     
   - Run the NetSim Scenario file
