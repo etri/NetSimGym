@@ -59,10 +59,6 @@ There are two methods for running NetSim simulation:
     - LICENSE_PATH = os.path.join(NETSIM_PATH, "netsim-cloud-license-etri-korea.lic")
   - Navigate to the directory containing the NetSim_Scenario file
 
-If you use Anaconda, you can install GymProxy by the followings:
-
-    $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
-
     $ cd C:\Users\ETRI\Documents\NetSim_Work_2024\python
     
   - Run the NetSim Scenario file
