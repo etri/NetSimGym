@@ -34,7 +34,7 @@ class NetSimSocketBridge:
         self.socket.send(name.encode())
 
     def disconnect_from_netsim(self):
-        if self.socket:
+        if self.socket: 
             self.socket.close()
             time.sleep(0.1)
 
@@ -137,7 +137,7 @@ class NetSimSocketBridge:
         for command_count in CommandNum:
             obs_index = 0
             for j in range(command_count):
-                if obs_index < len(netsim_msg.details):
+                while obs_index < len(netsim_msg.details):
                     any_msg = netsim_msg.details[obs_index]
                     if any_msg.type_url == "type.googleapis.com/ObsMsg":
                         obs = pb.ObsMsg()
