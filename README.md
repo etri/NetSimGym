@@ -94,7 +94,7 @@ Import experiment set up file using rllib.netsimexp in RLlib directory:
     - Running Load balancing example, use NetsimGym_ex2-2_ran3_30s
     
 
-Run example in RLlib directory
+Run example in rllib directory
 
 ```
 $ python PPO_ex1.py or python PPO_ex2_discrete.py
