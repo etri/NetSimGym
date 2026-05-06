@@ -15,13 +15,14 @@ As pre-requisite, you should have Python and NetSim:
 - NetSim standard v14.1.15
 
 And, you have following Python packages:
-- Gymnasium 14.1.15
+- Gymnasium 1.1.1
 - Protobuf 5.27.2
 - numpy 1.26.4
 - pandas 2.2.2
 - PyGetWindow 0.0.9
 - PyAutoGUI 0.9.54
 - matplotlib 3.8.3
+- rllib (ray) 2.42.1
 
 After installing required packages, clone this repository on your machine and import experiment set-up file for NetSimGym:
 - Open NetSim and select "Import" from "Your Work"
@@ -54,7 +55,7 @@ Run the agent file with the same number as the currently running NetSim simulati
 
 Running NetSim simulation:
 - Edit "NetSim_Scenario_ex1.py" and 'NetSim_Scenario_ex2,py" file (set netsim path to the "bin_x64" directory of your workspace, IOPath to the experiment folder location, and license path to the license file name)
-- ex)
+  - ex)
   - NETSIM_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0\\bin_x64"
   - IO_PATH = "C:\\Users\\ETRI\\Documents\\NetSim\\Workspaces\\NetSimGym_v1-0"
   - LICENSE_PATH = os.path.join(NETSIM_PATH, "netsim-cloud-license-etri-korea.lic")
@@ -71,6 +72,33 @@ Run the agent file with the same number as the currently running NetSim simulati
   
     $ python agent_ex1.py or python agent_ex2.py
 
+## Running NetsimGym with RLlib 
+
+Import experiment set up file using rllib.netsimexp in RLlib directory:
+- Follow import experiment set-up part (line 27~33) using rllib.netsimexp
+
+- Edit NetSim_Scenario_RL_portnum file:
+    - Edit PATH using directory path and name set in netsim folder
+    - ex)
+
+    - NETSIM_PATH = "C:\\Users\\Yerin\\Documents\\NetSim\\Workspaces\\${Netsim directory name}\\bin_x64"
+    - IO_PATH = "C:\\Users\\Yerin\\Documents\\NetSim\\Workspaces\\${Netsim directory name}"
+    - LICENSE_PATH = os.path.join(NETSIM_PATH, "netsim-cloud-license-etri-korea.lic")
+
+
+- Edit which file to run using CONFIG_FOLDER variable
+- ex)
+    - CONFIG_FOLDER = os.path.join(IO_PATH, "NetSimGym_ex2-2_ran3_30s")
+
+    - Running DownLink Power Control example, use RL_based_power_control 3x6
+    - Running Load balancing example, use NetsimGym_ex2-2_ran3_30s
+    
+
+Run example in RLlib directory
+
+```
+$ python PPO_ex1.py or python PPO_ex2_discrete.py
+ ```
     
 ## Acknowledgement
 
