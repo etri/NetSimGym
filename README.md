@@ -99,6 +99,56 @@ Run example in rllib directory
 ```
 $ python PPO_ex1.py or python PPO_ex2_discrete.py
  ```
+
+## State, Action, Reward settings
+- State
+  - Adding new state / observation
+    - Add new state in GymEx_.c file, below is example adding RandomState_command
+      ```
+      void execute_RandomState_command(ptrCLIENTINFO info, ptrCOMMANDARRAY command, int index)
+      {
+        float values[SIZE_OF_MAP];
+        for (uint32_t i = 0; i < SIZE_OF_MAP; i++) {
+          values[i] = rand() % 5; // Random values between 0 and 4
+          fprintf(stderr, "Random State %d: %f \n", i, values[i]);
+      }
+
+    	contain_obs(info, "RandomState", values, SIZE_OF_MAP);
+
+    	return;
+
+      }
+      ```
+    - Add new case in Commandlist.c, process_obs_command
+      ```
+      void process_obs_command(int commandname, char* source){
+	
+    	switch (commandname) {
+    	case 1:
+    		strcpy(source, "RandomState");
+    		break;
+
+      ```
+    - Add newly implemented function in GymEx_.c and add it on Gym.h file
+      ```
+      __declspec(dllexport) void execute_RandomState_command(ptrCLIENTINFO info, ptrCOMMANDARRAY command, int index);
+      ```
+    - In SimulationCommand.c, add new command
+      ```
+      void execute_command(ptrCLIENTINFO info, ptrCOMMANDARRAY command, NETSIM_ID d)
+      {
+     
+  		else if (!_stricmp(command->commands[index], "RandomState"))
+  			execute_RandomState_command(info, command, index, d);
+      ```
+    - Add new case in commandlist.py
+      ```
+      def CommandStrToNum(commandstring):
+        match commandstring:
+            case "RandomState":
+      ```
+
+
     
 ## Acknowledgement
 
