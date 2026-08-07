@@ -100,55 +100,26 @@ Run example in rllib directory
 $ python PPO_ex1.py or python PPO_ex2_discrete.py
  ```
 
-## State, Action, Reward settings
-- State
-  - Adding new state / observation
-    - Add new state in GymEx_.c file, below is example adding RandomState_command
-      ```
-      void execute_RandomState_command(ptrCLIENTINFO info, ptrCOMMANDARRAY command, int index)
-      {
-        float values[SIZE_OF_MAP];
-        for (uint32_t i = 0; i < SIZE_OF_MAP; i++) {
-          values[i] = rand() % 5; // Random values between 0 and 4
-          fprintf(stderr, "Random State %d: %f \n", i, values[i]);
-      }
-
-    	contain_obs(info, "RandomState", values, SIZE_OF_MAP);
-
-    	return;
-
-      }
-      ```
-    - Add new case in Commandlist.c, process_obs_command
-      ```
-      void process_obs_command(int commandname, char* source){
-	
-    	switch (commandname) {
-    	case 1:
-    		strcpy(source, "RandomState");
-    		break;
-
-      ```
-    - Add newly implemented function in GymEx_.c and add it on Gym.h file
-      ```
-      __declspec(dllexport) void execute_RandomState_command(ptrCLIENTINFO info, ptrCOMMANDARRAY command, int index);
-      ```
-    - In SimulationCommand.c, add new command
-      ```
-      void execute_command(ptrCLIENTINFO info, ptrCOMMANDARRAY command, NETSIM_ID d)
-      {
-     
-  		else if (!_stricmp(command->commands[index], "RandomState"))
-  			execute_RandomState_command(info, command, index, d);
-      ```
-    - Add new case in commandlist.py
-      ```
-      def CommandStrToNum(commandstring):
-        match commandstring:
-            case "RandomState":
-      ```
+## RLlib scenario modification
+- For state & action & reward modification, change env_config variable in PPO_ex1.py or PPO_ex2_discrete.py 
+- For modifying number of runners & learners, change num_env_runners_run and num_learners_run variable in PPO_ex1.py or PPO_ex2_discrete.py 
+- For modifying number of iterations, change training_iteration variable in PPO_ex1.py or PPO_ex2_discrete.py
 
 
+
+## Performance metrics
+
+<img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/a99a79d3-a126-4782-b4b9-0e56e166cd82" />
+
+### Sampling throughput & Execution time
+
+- Sampling throughput represents the average number of environment steps collected per second. Increasing the number of runners from one to two and four increases the throughput from 3.91 steps/s to 7.87 and 14.72 steps/s, respectively. Relative to the single-runner configuration, four runners therefore achieve a 3.76 times increase in sampling throughput. The corresponding total run time decreases from 25.68 min to 13.25 and 7.68 min, resulting in 1.94 times and 3.34 times speedups. The derived parallel efficiencies are 96.9% and 83.6% for two and four runners, respectively. These results show that trajectory collection scales close to proportionally within the evaluated range, whereas end-to-end execution exhibits modest diminishing returns because not all execution stages benefit equally from additional runners.
+
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/23918f8c-b9f9-4a35-97b4-847cb517442d" />
+
+### System resource utilization
+
+- System resource utilization. CPU and memory utilization were monitored at the whole-system level throughout each profiling run. CPU utilization generally increases with the number of runners, from approximately 10-12% with one runner to 16-18% with four runners. Memory utilization shows a more moderate increase, reaching approximately 66-67% with four runners. The results demonstrate that higher sampling throughput incurs additional host-resource usage, while the evaluated configurations remain within the available CPU and memory capacity of the test platform. These measurements represent system-level utilization and should not be interpreted as the resource consumption of NetSimGym alone.
     
 ## Acknowledgement
 
