@@ -108,13 +108,13 @@ $ python PPO_ex1.py or python PPO_ex2_discrete.py
 
 ## Performance metrics
 
-<img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/a99a79d3-a126-4782-b4b9-0e56e166cd82" />
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/23918f8c-b9f9-4a35-97b4-847cb517442d" />
 
 ### Sampling throughput & Execution time
 
 - Sampling throughput represents the average number of environment steps collected per second. Increasing the number of runners from one to two and four increases the throughput from 3.91 steps/s to 7.87 and 14.72 steps/s, respectively. Relative to the single-runner configuration, four runners therefore achieve a 3.76 times increase in sampling throughput. The corresponding total run time decreases from 25.68 min to 13.25 and 7.68 min, resulting in 1.94 times and 3.34 times speedups. The derived parallel efficiencies are 96.9% and 83.6% for two and four runners, respectively. These results show that trajectory collection scales close to proportionally within the evaluated range, whereas end-to-end execution exhibits modest diminishing returns because not all execution stages benefit equally from additional runners.
 
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/23918f8c-b9f9-4a35-97b4-847cb517442d" />
+<img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/a99a79d3-a126-4782-b4b9-0e56e166cd82" />
 
 ### System resource utilization
 
