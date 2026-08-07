@@ -101,10 +101,9 @@ $ python PPO_ex1.py or python PPO_ex2_discrete.py
  ```
 
 ## RLlib scenario modification
-- For state & action & reward modification, change env_config variable in PPO_ex1.py or PPO_ex2_discrete.py 
-- For modifying number of runners & learners, change num_env_runners_run and num_learners_run variable in PPO_ex1.py or PPO_ex2_discrete.py 
-- For modifying number of iterations, change training_iteration variable in PPO_ex1.py or PPO_ex2_discrete.py
-
+- For state & action & reward modification, change "env_config" variable in "PPO_ex1.py" or "PPO_ex2_discrete.py" 
+- For modifying number of runners & learners, change "num_env_runners_run" and "num_learners_run" variable in "PPO_ex1.py" or "PPO_ex2_discrete.py" 
+- For modifying number of iterations, change "training_iteration" variable in "PPO_ex1.py" or "PPO_ex2_discrete.py" 
 
 
 ## Performance metrics
