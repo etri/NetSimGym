@@ -122,7 +122,7 @@ $ python PPO_ex1.py or python PPO_ex2_discrete.py
 
 ### Convergence and stability
 
-<img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/67813a2c-a305-43b9-b5b6-31bde8121ae0" />
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/67813a2c-a305-43b9-b5b6-31bde8121ae0" />
 
 - The figure compares the learning performance obtained using one and four environment runners. The L1 norm is defined as the sum of the absolute differences between each base station’s load and the average load; therefore, a lower L1 norm indicates a more balanced load distribution across the base stations. When a single runner is used, the L1 norm decreases only gradually and exhibits substantial fluctuations throughout training, reaching approximately 6.33 after 35 hours. In contrast, the four-runner configuration shows a much faster and more consistent reduction in the L1 norm, converging to approximately 4.44 within 30 hours. Its moving-average curve also becomes smoother and more stable toward the end of training. These results demonstrate that using four runners accelerates convergence, improves training stability than using a single runner.
     
