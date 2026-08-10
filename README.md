@@ -119,6 +119,12 @@ $ python PPO_ex1.py or python PPO_ex2_discrete.py
 ### System resource utilization
 
 - System resource utilization. CPU and memory utilization were monitored at the whole-system level throughout each profiling run. CPU utilization generally increases with the number of runners, from approximately 10-12% with one runner to 16-18% with four runners. Memory utilization shows a more moderate increase, reaching approximately 66-67% with four runners. The results demonstrate that higher sampling throughput incurs additional host-resource usage, while the evaluated configurations remain within the available CPU and memory capacity of the test platform. These measurements represent system-level utilization and should not be interpreted as the resource consumption of NetSimGym alone.
+
+### Convergence and stability
+
+<img width="2000" height="1040" alt="image" src="https://github.com/user-attachments/assets/67813a2c-a305-43b9-b5b6-31bde8121ae0" />
+
+- The figure compares the learning performance obtained using one and four environment runners. The L1 norm is defined as the sum of the absolute differences between each base station’s load and the average load; therefore, a lower L1 norm indicates a more balanced load distribution across the base stations. When a single runner is used, the L1 norm decreases only gradually and exhibits substantial fluctuations throughout training, reaching approximately 6.33 after 35 hours. In contrast, the four-runner configuration shows a much faster and more consistent reduction in the L1 norm, converging to approximately 4.44 within 30 hours. Its moving-average curve also becomes smoother and more stable toward the end of training. These results demonstrate that using four runners accelerates convergence, improves training stability than using a single runner.
     
 ## Acknowledgement
 
